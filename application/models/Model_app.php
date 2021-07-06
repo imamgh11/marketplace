@@ -7,13 +7,13 @@ class Model_app extends CI_model
     }
 
     //toko
-    function tampil_data_toko($table, $id){
+    public function tampil_data_toko($table, $id){
         $this->db->where('id_pengguna',$id);
         return $this->db->get($table);
     }
     //produk
-    function tampil_data_produk_by_id($table, $id){
-        $this->db->where('id_pengguna',$id);
+    public function tampil_data_produk($table, $id_supplier){
+        $this->db->where('id_supplier',$id_supplier);
         return $this->db->get($table);
     }
 

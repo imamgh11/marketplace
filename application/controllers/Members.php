@@ -49,29 +49,20 @@ class Members extends CI_Controller
 	}
 	function produk_id()
 	{
-		cek_session_members();
-		$id = $this->session->id_supplier;
+		
+		$id_supplier = $this->uri->segment(3);
 		$data['title'] = 'Produk Saya';
 		$data['breadcrumb'] = 'Produk Saya';
 		
 		
-		$data['record'] = $this->model_app->tampil_data_produk('tb_toko_produk',$id)->result();
+		$data['record'] = $this->model_app->tampil_data_produk('tb_toko_produk',$id_supplier)->result();
 		
 		
-		$this->template->load('home/template', 'home/profile/view_listtoko', $data);
+		$this->template->load('home/template', 'home/profile/view_produk',$data);
 	}
 	function toko()
 	{
 		cek_session_members();
-		// $id = $this->session->id_pengguna;
-		// $data['title'] = 'Buat Toko';
-		// $data['breadcrumb'] = 'Buat Toko';
-		// $row = $this->db->get_where('tb_pengguna', "id_pengguna='$id'")->row_array();
-		// $data['record'] = $row;
-		// $this->template->load('home/template', 'home/profile/view_toko', $data);
-
-
-	
 
 		if (isset($_POST['submit'])) {
 			$data = array(
@@ -94,6 +85,62 @@ class Members extends CI_Controller
 		}
 		
 	}
+	function produk_tambah()
+	{
+
+		if (isset($_POST['submit'])) {
+			$config['upload_path'] = 'assets/images/produk/';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$config['max_size'] = '5000'; // kb
+			$config['encrypt_name'] = TRUE;
+			$this->load->library('upload', $config);
+			$this->upload->do_upload('g');
+			$hasil = $this->upload->data();
+			if ($hasil['file_name'] == '') {
+				$data = array(
+					'id_supplier' => $this->input->post('supplier'),
+					'id_kategori_produk' => $this->input->post('a'),
+					'nama_produk' => $this->input->post('b'),
+					'produk_seo' => $this->db->escape_str(seo_title($this->input->post('b'))),
+					'satuan' => $this->input->post('c'),
+					'harga_beli' => $this->input->post('d'),
+					'harga_konsumen' => $this->input->post('f'),
+					'diskon' => $this->input->post('diskon'),
+					'berat' => $this->input->post('berat'),
+					'stok' => $this->input->post('stok'),
+					'keterangan' => $this->input->post('ff'),
+					'waktu_input' => date('Y-m-d H:i:s'),
+
+				);
+			} else {
+				$data = array(
+					'id_supplier' => $this->input->post('supplier'),
+					'id_kategori_produk' => $this->input->post('a'),
+					'nama_produk' => $this->input->post('b'),
+					'produk_seo' => $this->db->escape_str(seo_title($this->input->post('b'))),
+					'satuan' => $this->input->post('c'),
+					'harga_beli' => $this->input->post('d'),
+					'harga_konsumen' => $this->input->post('f'),
+					'diskon' => $this->input->post('diskon'),
+					'berat' => $this->input->post('berat'),
+					'stok' => $this->input->post('stok'),
+					'gambar' => $hasil['file_name'],
+					'keterangan' => $this->input->post('ff'),
+					'waktu_input' => date('Y-m-d H:i:s'),
+
+				);
+			}
+			$this->model_app->insert('tb_toko_produk', $data);
+			redirect('members/listtoko');
+		} else {
+
+			$data['title'] = 'Tambah Produk - Sibook Store';
+			$data['record'] = $this->model_app->view_ordering('tb_toko_kategoriproduk', 'id_kategori_produk', 'DESC');
+			$data['supp'] = $this->model_app->view_ordering('tb_toko_supplier', 'id_supplier', 'DESC');
+			$this->template->load('home/template', 'home/profile/produk_tambah', $data);
+		}
+	}
+	
 	function input_data_toko()
 	{
 		$this->load->model('model_members', 'model');

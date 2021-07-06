@@ -92,4 +92,20 @@ class Model_members extends CI_model
         $this->db->insert('tb_toko_supplier',  $data);
 
     }
+    function input_data_produk()
+    {
+
+        $data = [
+            'id_pengguna' => $this->input->post('id_pengguna'),
+            'nama_supplier' => $this->input->post('nama_supplier'),
+            'kontak_person' => $this->input->post('kontak_person'),
+            'no_hp' => $this->input->post('no_hp'),
+            'kode_pos' => $this->input->post('kode_pos'),
+            'alamat_lengkap' => $this->input->post('alamat_lengkap'),
+            'keterangan' => $this->input->post('keterangan'),
+
+        ];
+        $this->db->insert('tb_toko_supplier',  $data);
+
+    }
 }

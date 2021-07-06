@@ -113,9 +113,7 @@ $produk = $row['nama_produk'];
                         <div class="product__actions-item product__actions-item--addtocart">
                             <a href="javascript:void(0)" class="btn btn-primary btn-lg " onclick="add2cart()">Tambah ke keranjang</a>
                         </div>
-                        <div class="product__actions-item product__actions-item--addtocart">
-                            <button href="javascript:void(0)" class="btn btn-primary btn-lg float-right" onclick="add2cart()">Menjadi Reseller</button>
-                        </div>
+                       
                         
                     </div>
 
@@ -146,10 +144,18 @@ $produk = $row['nama_produk'];
 
     </div>
 
-
-
+<br><br>
+<h4 style="text-align:center;">Menjadi Reseller</h4>
+    <div class="product__actions-item product__actions-item--addtocart">
+        <a href="<?=base_url('assets/images/produk/'). $row['gambar']?>" class="btn btn-primary btn-lg float-left" download>Unduh Gambar</a>
+    </div>
+    <div class="product__actions-item product__actions-item--addtocart">
+        <button href="javascript:void(0)" class="btn btn-primary btn-lg float-right" onclick="myFunction()">Copy Deskripsi</button>
+    </div>
+                        <br><br>
     <div class="reviews-view mt-5">
         <div class="reviews-view__list">
+
             <h3 class="reviews-view__header">Ulasan Pelanggan</h3>
             <div class="reviews-list">
                 <ol class="reviews-list__content">
@@ -296,3 +302,19 @@ if (!empty($temp_sales)) {
 
 <input type="hidden" id="number-cart" value="<?= $number_cart; ?>">
 <script src="<?= base_url('assets/template/js/product.js') ?>"></script>
+<script type="text/javascript">
+    function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+</script>

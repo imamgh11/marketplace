@@ -449,7 +449,10 @@ class Produk extends CI_Controller
 			}
 		}
 	}
-
+	public function download_gambar(){
+        $data['rows'] = $this->db->query("SELECT * FROM tb_toko_produk")->row_array();
+        force_download(base_url('assets/images/produk') . $rows['gambar']);
+    }
 	function print_invoice()
 	{
 		$idp = $this->uri->segment('3');

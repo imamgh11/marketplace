@@ -84,7 +84,7 @@
 
             <div class="site-footer__bottom">
                 <div class="site-footer__copyright">&copy; <?= date('Y') ?> <a href="https://Sibook.com/" target="_BLANK">Sibook</a></div>
-                <div class="site-footer__payments"><img src="<?= base_url('assets/template/tema/') ?>images/payments.png" alt=""></div>
+                
             </div>
         </div>
 

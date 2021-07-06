@@ -7,6 +7,7 @@
             <li class="account-nav__item"><a href="<?= base_url('members/dashboard') ?>">Dashboard</a></li>
             <li class="account-nav__item"><a href="<?= base_url('members/edit_profile') ?>">Ubah Profil</a></li>
             <li class="account-nav__item"><a href="<?= base_url('members/edit_alamat') ?>">Ubah Alamat</a></li>
+            <li class="account-nav__item"><a href="<?= base_url('members/listtoko') ?>">Toko Saya</a></li>
             <li class="account-nav__item"><a href="<?= base_url('members/riwayat_belanja') ?>">Riwayat Transaksi</a></li>
             <li class="account-nav__item account-nav__item--active"><a href="<?= base_url('members/password') ?>">Ganti Password</a></li>
             <li class="account-nav__item"><a href="javascript:void(0)" onclick="logout()">Keluar</a></li>

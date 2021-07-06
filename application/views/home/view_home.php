@@ -14,6 +14,30 @@ if ($this->uri->segment(2) == 'kategori') {
     <div class="col-12">
         <div class="block">
 
+            <table class="table" style="text-align:center">
+              <tbody>
+                <tr>
+                  <th scope="col"><a href="<?php echo base_url('/produk') ?>"><i class="fa fa-shopping-bag fa-3x" style="color:#338dcc;" ></i></a><br><br>Belanja</th>
+                  <th scope="col"><a href="<?php echo base_url('/') ?>"><i class="fa fa-chart-line fa-3x" style="color:#338dcc;" ></i></a><br><br>Pendapatan</th>
+                  <th scope="col"><a href="<?php echo base_url('/members/riwayat_belanja') ?>"><i class="fa fa-book fa-3x" style="color:#338dcc;" ></i></a><br><br>Cek Status Pesanan</th>
+                  
+                </tr>
+              </tbody>
+              <tbody>
+                <th scope="col"><a href="<?php echo base_url('/konfirmasi') ?>"><i class="fa fa-credit-card fa-3x" style="color:#338dcc;" ></i></a><br><br>Konfirmasi Pembayaran</th>
+                  <th scope="col"><a href="<?php echo base_url('/login') ?>"><i class="fa fa-user fa-3x" style="color:#338dcc;" ></i></a><br><br>Profile</th>
+                  <th scope="col"><a href="<?php echo base_url('/members/edit_profile') ?>"><i class="fa fa-cog fa-3x" style="color:#338dcc;" ></i></a><br><br>Pengaturan</th>
+                
+              </tbody>
+              <tbody>
+                <th scope="col"><a href="<?php echo base_url('/artikel') ?>"><i class="fa fa-money-bill-wave fa-3x" style="color:#338dcc;" ></i></a><br><br>Artikel Keuangan</th>
+                  <th scope="col"><a href="<?php echo base_url('/login') ?>"><i class="fa fa-cubes fa-3x" style="color:#338dcc;" ></i></a><br><br>Harga Emas Saat Ini</th>
+                  <th scope="col"><a href="<?php echo base_url('/members/edit_profile') ?>"><i class="fa fa-coins fa-3x" style="color:#338dcc;" ></i></a><br><br>Harga BitCoin Saat Ini</th>
+                
+              </tbody>
+            </table>
+            <br>
+            <br>
             <div class="products-view">
                 <div class="products-view__list products-list" data-layout="grid-4-full" data-with-features="false">
                     <div class="products-list__body">
