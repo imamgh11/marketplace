@@ -4,9 +4,29 @@
         $total = $this->db->query("SELECT sum((a.harga_jual*a.jumlah)-(b.diskon*a.jumlah)) as total, sum(b.berat*a.jumlah) as total_berat FROM `tb_toko_penjualantemp` a JOIN tb_toko_produk b ON a.id_produk=b.id_produk where a.session='" . $this->session->idp . "'")->row_array();
 
         ?>
+
+
+
+
+
+
         <div class="col-md-4">
             <div class="card w-100 shadow mb-2 bg-white rounded">
                 <div class="card-body">
+
+
+  <h4 style="text-align:center;">Menjadi Reseller</h4>
+       
+
+                  
+                  <hr>
+
+                  <div class="form-group">
+                    <label>Masukan Margin Keuntungan</label>
+                    <input class='form-control' type='text' name='jml_reseller' >
+                  </div>
+               
+
                     <h6 class="float-left">Alamat Pengiriman</h6>
                     <a class="float-right" href="<?= base_url('members/edit_alamat') ?>" title="Ubah Alamat"><i class="fas fa-edit"></i></a>
                     <table class="table table-borderless">
@@ -69,6 +89,15 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
 
         <div class="col-md-5">
             <div class="card w-100 shadow mb-2 bg-white rounded">
@@ -268,4 +297,33 @@
         $("#kirim").html(toDuit(ongkir2));
         $("#totalbayar").html(toDuit(bayar));
     }
+</script>
+
+
+<script type="text/javascript">
+    function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+</script>
+
+<script type="text/javascript">
+    function myFunctionhide() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
 </script>

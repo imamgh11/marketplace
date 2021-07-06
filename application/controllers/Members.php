@@ -19,6 +19,47 @@ class Members extends CI_Controller
 			redirect('members/dashboard');
 		}
 	}
+	
+
+	// function input_reseller()
+	// {
+	// 	$this->db->trans_start();
+	// 		cek_session_members();
+
+	// 		if (isset($_POST['submit'])) {
+	// 			$data = [
+					
+	// 			];
+	// 			$this->model_app->insert('tb_reseller', $data);
+
+	// 			$data1 = [
+
+	// 				'id_penjualan' => $this->db->insert_id(),
+	// 				'jml_reseller' => $this->input->post('jml_reseller'),
+	// 				'id_pengguna' => $this->input->post('id_pengguna'),
+	// 				'aktif' => "Belum"
+
+	// 			];
+	// 			$this->model_app->insert('tb_reseller', $data1);
+
+	// 			$this->template->load('home/template', 'home/produk/back', $data);
+	// 		}
+
+	// }
+
+
+
+
+
+	function reseller_view()
+	{
+		cek_session_members();
+		$id = $this->session->id_pengguna;
+		$data['title'] = 'Pendapatan Reseller';
+		$data['breadcrumb'] = 'Pendapatan Reseller';
+		$row = $this->db->get_where('tb_reseller', "id_pengguna='$id'")->row_array();
+	}
+
 
 	function dashboard()
 	{

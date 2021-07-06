@@ -45,6 +45,18 @@ if ($record->num_rows() == '0') { ?>
                   <form action="<?= base_url('keranjang/update2/') . encrypt_url($row['id_penjualan_detail']); ?> ?>." method="POST">
                     <input name="id_penjualan_detail" type="hidden" value="<?= $row['id_penjualan_detail']; ?>">
                     <input type="hidden" id="stock_<?= $i ?>" value="<?= $row['stok'] ?>">
+                    
+
+
+
+
+
+
+
+
+
+
+
                     <div class="input-number mt-1" style="width: 150px">
                       <input name="jumlah" style="height:30px;" class="form-control input-number__input" type="number" min="1" value="<?= $row['jumlah'] ?>" id="quantity_<?= $i ?>">
                       <a href="javascript:void(0)" class="input-number__add" id="plus_<?= $i ?>"></a>
@@ -62,6 +74,7 @@ if ($record->num_rows() == '0') { ?>
 
 
                     </div>
+
                     <span id="save_<?= $i ?>" style="display: none"></span>
                   </form>
 
@@ -90,6 +103,41 @@ if ($record->num_rows() == '0') { ?>
 
           </table>
         </div>
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+  <textarea class="form-control" id="myInput" ><?= $row['keterangan']?></textarea>
+    <div class="product__actions-item product__actions-item--addtocart">
+        <a href="<?=base_url('assets/images/produk/'). $row['gambar']?>" class="btn btn-primary btn-lg float-left" download>Unduh Gambar</a>
+    </div>
+
+    <div class="product__actions-item product__actions-item--addtocart">
+        <button href="javascript:void(0)" class="btn btn-primary btn-lg float-left" onclick="myFunction()">Copy Deskripsi</button>
+    </div>
+<br>
+    <br>
+
+
+
+
       </div>
     </div>
 
@@ -108,8 +156,15 @@ if ($record->num_rows() == '0') { ?>
               </tr>
             </tfoot>
           </table><a class="btn btn-success btn-sm btn-block cart__checkout-button" href="<?= base_url('keranjang/checkouts') ?>">Proses checkout</a>
+          
+
+
+
+
         </div>
       </div>
+
+         
     </div>
 
   </div>
@@ -119,3 +174,30 @@ if ($record->num_rows() == '0') { ?>
 
 <input type="hidden" id="qty_product" value="<?= $qty_product ?>">
 <script src="<?= base_url('assets/template/js/cart.js') ?>"></script>
+<script type="text/javascript">
+    function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the text: " + copyText.value);
+}
+</script>
+
+<script type="text/javascript">
+    function myFunctionhide() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>

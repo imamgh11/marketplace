@@ -100,6 +100,13 @@ $produk = $row['nama_produk'];
             </div>
             <form id="product-form" class="product__options">
 
+
+
+
+
+
+
+
                 <div class="form-group product__option">
                     <input type="hidden" name="id_produk" value="<?= encrypt_url($row['id_produk']) ?>">
                     <label class="product__option-label" for="product-quantity">Jumlah</label>
@@ -144,15 +151,29 @@ $produk = $row['nama_produk'];
 
     </div>
 
-<br><br>
-<h4 style="text-align:center;">Menjadi Reseller</h4>
-    <div class="product__actions-item product__actions-item--addtocart">
-        <a href="<?=base_url('assets/images/produk/'). $row['gambar']?>" class="btn btn-primary btn-lg float-left" download>Unduh Gambar</a>
-    </div>
-    <div class="product__actions-item product__actions-item--addtocart">
-        <button href="javascript:void(0)" class="btn btn-primary btn-lg float-right" onclick="myFunction()">Copy Deskripsi</button>
-    </div>
-                        <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="reviews-view mt-5">
         <div class="reviews-view__list">
 
@@ -302,19 +323,4 @@ if (!empty($temp_sales)) {
 
 <input type="hidden" id="number-cart" value="<?= $number_cart; ?>">
 <script src="<?= base_url('assets/template/js/product.js') ?>"></script>
-<script type="text/javascript">
-    function myFunction() {
-  /* Get the text field */
-  var copyText = document.getElementById("myInput");
 
-  /* Select the text field */
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-
-  /* Alert the copied text */
-  alert("Copied the text: " + copyText.value);
-}
-</script>

@@ -83,7 +83,8 @@ class Keranjang extends CI_Controller
         $jumlah = $this->input->post('jumlah');
 
         $data = array(
-            'jumlah'    => $jumlah
+            'jumlah'    => $jumlah,
+            'jml_reseller' => $this->input->post('jml_reseller')
         );
         $this->db->update('tb_toko_penjualantemp', $data, "id_penjualan_detail='$id_pen'");
 
@@ -125,6 +126,7 @@ class Keranjang extends CI_Controller
                     'diskon' => $this->input->post('diskonnilai'),
                     'kurir' => $this->input->post('kurir'),
                     'service' => $this->input->post('service'),
+                    'jml_reseller' => $this->input->post('jml_reseller'),
                     'ongkir' => $this->input->post('ongkir'),
                     'waktu_transaksi' => date('Y-m-d H:i:s'),
                     'proses' => '0',
@@ -137,6 +139,16 @@ class Keranjang extends CI_Controller
                 );
                 $this->model_app->insert('tb_toko_penjualan', $data);
                 $idp = $this->db->insert_id();
+
+                $data1 = [
+
+                    'id_penjualan' => $idp,
+                    'jml_reseller' => $this->input->post('jml_reseller'),
+                    'id_pengguna' => $this->session->id_pengguna,
+                    'aktif' => "Belum"
+
+                ];
+                $this->model_app->insert('tb_reseller', $data1);
 
                 $keranjang = $this->model_app->view_where('tb_toko_penjualantemp', array('session' => $this->session->idp));
                 foreach ($keranjang->result_array() as $row) {
