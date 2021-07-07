@@ -31,11 +31,11 @@ if ($this->uri->segment(2) == 'kategori') {
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <img src="https://www.pfimegalife.co.id/literasi-keuangan/site/libraries/03.%20PML_OnPage_December%202020_header.jpg" alt="alternatetext">
+                <img src="https://www.pfimegalife.co.id/literasi-keuangan/site/libraries/03.%20PML_OnPage_December%202020_header.jpg" alt="Investasi" class="img-fluid" alt="Responsive image">
                 
 
-
-                <a href="<?php echo base_url('/artikel') ?>">Baca Selengkapnya</a>
+                <br><br>                
+                <a class='float-lest btn btn-primary btn-sm'  href="<?php echo base_url('/artikel') ?>">Baca Selengkapnya</a>
             </div>
         </div>
     </div>
