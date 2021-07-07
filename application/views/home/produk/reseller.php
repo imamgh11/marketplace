@@ -6,7 +6,7 @@
           <div class="card">
             <div class="card-header">
               <h3 class="card-title">Data Toko</h3>
-              <a class='float-lest btn btn-primary btn-sm' href='<?= base_url('members/toko'); ?>'>Tambah Toko</a>
+              <a class='float-lest btn btn-primary btn-sm' href='<?= base_url('produk/'); ?>'>Jadi Reseller</a>
             </div>
 
             <div class="card-body">

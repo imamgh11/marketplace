@@ -5,7 +5,10 @@
     <div class="mb-3 text-center">
       <h5 class="mb-5">Transaksi Berhasil</h5>
       No Invoice anda : <b><?= $orders; ?></b><br>
-      Total belanja anda <b class="text-danger">Rp <?= $total_bayar; ?></b><br>
+      Total belanja <b>Rp <?= $total_bayar + $reseller; ?></b><br>
+      Margin Reseller <b>Rp <?php echo $reseller; ?></b> 
+
+      Total Pembayaran <b class="text-danger">Rp <?= $total_bayar + $reseller; ?></b>
       <a target='_BLANK' class="btn btn-sm btn-success mt-3 mb-2" href="<?= base_url(); ?>produk/print_invoice/<?= $orders; ?>"><span class="glyphicon glyphicon-print"></span> Download Invoice</a>
       <br>
     </div>
@@ -13,7 +16,7 @@
     <div class="mb-3">
       <p class="text-justify">
         Kami juga telah mengirimkan rincian pesanan anda ke <b class='text-danger'><?= $email; ?></b><br>
-        Silahkan mentransferkan uang dengan total <b>Rp <?= $total_bayar; ?></b> ke salah satu pilihan bank di bawah ini : <br>
+        Silahkan mentransferkan uang dengan total <b>Rp <?= $total_bayar + $reseller; ?></b> ke salah satu pilihan bank di bawah ini : <br>
       </p>
     </div>
 

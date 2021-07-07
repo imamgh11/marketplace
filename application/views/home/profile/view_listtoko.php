@@ -23,6 +23,7 @@
             <div class="card-header">
               <h3 class="card-title">Data Toko</h3>
               <a class='float-lest btn btn-primary btn-sm' href='<?= base_url('members/toko'); ?>'>Tambah Toko</a>
+              <a href="<?php echo base_url('/members/reseller_view') ?>">Reseller Saya</a>
             </div>
 
             <div class="card-body">

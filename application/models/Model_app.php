@@ -17,6 +17,12 @@ class Model_app extends CI_model
         return $this->db->get($table);
     }
 
+    //reseller
+    public function tampil_data_reseller($table, $id){
+        $this->db->where('id_pengguna',$id);
+        return $this->db->get($table);
+    }
+
     public function get_by_id($id)
     {
         $this->db->from('tb_toko_produk');

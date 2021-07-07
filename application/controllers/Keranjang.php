@@ -178,12 +178,12 @@ class Keranjang extends CI_Controller
                 $id_pengguna = $this->session->id_pengguna;
                 $usr = $this->db->query("SELECT email from tb_pengguna where id_pengguna=$id_pengguna")->row_array();
                 $email_tujuan = $usr['email'];
-
+                
                 $data['title'] = 'Transaksi Berhasil';
                 $data['email'] =  $usr['email'];
                 $data['orders'] = $this->session->idp;
                 $data['total_bayar'] = rupiah(+$this->input->post('total') + $this->input->post('ongkir'));
-
+                $data['reseller'] = rupiah(+$this->input->post('jml_reseller'));
                 $iden = $this->model_app->view_where('tb_web_identitas', array('id_identitas' => '1'))->row_array();
                 $data['rekening'] = $this->model_app->view('tb_toko_rekening');
 

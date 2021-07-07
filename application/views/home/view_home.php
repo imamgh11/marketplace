@@ -9,6 +9,38 @@ if ($this->uri->segment(2) == 'kategori') {
         </div>
 <?php }
 } ?>
+<head>
+<meta charset="utf-8">
+<title>Example of Auto Loading Bootstrap Modal on Page Load</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $("#myModal").modal('show');
+    });
+</script>
+</head>
+<body>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">CARA MELIPAT GANDAKAN UANG!!!
+            Investasi Vs Nabung</h5>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://www.pfimegalife.co.id/literasi-keuangan/site/libraries/03.%20PML_OnPage_December%202020_header.jpg" alt="alternatetext">
+                
+
+
+                <a href="<?php echo base_url('/artikel') ?>">Baca Selengkapnya</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 
 <div class="row">
     <div class="col-12">
@@ -18,7 +50,7 @@ if ($this->uri->segment(2) == 'kategori') {
               <tbody>
                 <tr>
                   <th scope="col"><a href="<?php echo base_url('/produk') ?>"><i class="fa fa-shopping-bag fa-3x" style="color:#338dcc;" ></i></a><br><br>Belanja</th>
-                  <th scope="col"><a href="<?php echo base_url('/') ?>"><i class="fa fa-chart-line fa-3x" style="color:#338dcc;" ></i></a><br><br>Pendapatan</th>
+                  <th scope="col"><a href="<?php echo base_url('/members/reseller_view') ?>"><i class="fa fa-chart-line fa-3x" style="color:#338dcc;" ></i></a><br><br>Pendapatan</th>
                   <th scope="col"><a href="<?php echo base_url('/members/riwayat_belanja') ?>"><i class="fa fa-book fa-3x" style="color:#338dcc;" ></i></a><br><br>Cek Status Pesanan</th>
                   
                 </tr>
@@ -31,8 +63,8 @@ if ($this->uri->segment(2) == 'kategori') {
               </tbody>
               <tbody>
                 <th scope="col"><a href="<?php echo base_url('/artikel') ?>"><i class="fa fa-money-bill-wave fa-3x" style="color:#338dcc;" ></i></a><br><br>Artikel Keuangan</th>
-                  <th scope="col"><a href="<?php echo base_url('/login') ?>"><i class="fa fa-cubes fa-3x" style="color:#338dcc;" ></i></a><br><br>Harga Emas Saat Ini</th>
-                  <th scope="col"><a href="<?php echo base_url('/members/edit_profile') ?>"><i class="fa fa-coins fa-3x" style="color:#338dcc;" ></i></a><br><br>Harga BitCoin Saat Ini</th>
+                  <th scope="col"><a href="<?php echo base_url('/members/gold') ?>"><i class="fa fa-cubes fa-3x" style="color:#338dcc;" ></i></a><br><br>Harga Emas Saat Ini</th>
+                  <th scope="col"><a href="<?php echo base_url('/members/bitcoin') ?>"><i class="fa fa-coins fa-3x" style="color:#338dcc;" ></i></a><br><br>Harga BitCoin Saat Ini</th>
                 
               </tbody>
             </table>
